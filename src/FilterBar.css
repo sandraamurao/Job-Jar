@@ -1,0 +1,13 @@
+button {
+    border: rgb(229, 229, 229);
+    border-radius: 10px;
+    padding: 5px 12px;
+    margin-right: 10px;
+}
+.btn {
+  background-color: rgb(227, 227, 227);
+}
+
+.btn-active {
+  background-color: #4A90E2;
+}
