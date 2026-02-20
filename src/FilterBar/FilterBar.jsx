@@ -1,10 +1,10 @@
 import "./FilterBar.css";
 
 function FilterBar({ activateFilterStatus, active }) {
-	const filters = ["All", "Applied", "Interview"];
+	const filters = ["All", "Applied", "Interview", "Offers", "Rejected"];
 
 	return (
-		<div>
+		<div className="filter-buttons">
 			{filters.map((filter) => (
                 <button
                 key={filter} // like a name; just for React internally to track which item is which when the list updates.
@@ -13,7 +13,7 @@ function FilterBar({ activateFilterStatus, active }) {
 			> {filter} </button>
             ))}
 
-			<button> + application </button>
+			<button className="new-application-btn"> + New Application </button>
 		</div>
 	);
 }

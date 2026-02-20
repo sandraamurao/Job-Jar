@@ -1,11 +1,31 @@
 button {
     border: rgb(229, 229, 229);
     border-radius: 10px;
-    padding: 5px 12px;
-    margin-right: 10px;
+    padding: 10px 20px;
+    margin-right: 20px;
+    font-size: 20px;
+    
 }
+
+.filter-buttons {
+
+}
+
+.new-application-btn {
+  background-color: #bb8fe6;
+}
+
+
+.new-application-btn:hover {
+  background-color: #d3acfa;
+}
+
 .btn {
   background-color: rgb(227, 227, 227);
+}
+
+.btn:hover {
+  background-color: rgb(200, 214, 243);
 }
 
 .btn-active {
