@@ -30,4 +30,6 @@ button {
 
 .btn-active {
   background-color: #4A90E2;
+  font-weight: bold;
+  color: white;
 }

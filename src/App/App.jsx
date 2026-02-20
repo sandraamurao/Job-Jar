@@ -16,7 +16,7 @@ function App() {
 		<div className="app-container">
 			<h1 className="title">Job Application Tracker</h1>
 			<p>
-				Did you apply to a new job posting? Add it here to keep track of it!
+				Keep track of your job search progress
 			</p>
 			<FilterBar activateFilterStatus={activateFilterStatus} active={active} />
 		</ div>
