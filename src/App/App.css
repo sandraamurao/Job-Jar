@@ -1,0 +1,11 @@
+.app-container {
+  padding: 40px;
+}
+
+.app-container .title {
+  font-size: 40px;
+}
+
+p {
+  font-size: 25px;
+}
