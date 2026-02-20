@@ -1,18 +1,18 @@
-export const jobStatus = {
-    all: "All",
-    applied: "Applied",
-    interview: "Interview",
-    offer: "Offer",
-    rejected: "Rejected"
-}
+export const jobStatus = [
+    "Applied",
+    "Interview",
+    "Offer",
+    "Rejected"
+]
 
 export const jobApplicationDetails = {
-    id: 0,
+    id: "",
     company: "",
     jobTitle: "",
-    status: jobStatus.all,
+    status: "",
     dateApplied: "",
     interviewDate: "",
+    followUpDate: "",
     jobUrl: "",
     notes: "",
 }

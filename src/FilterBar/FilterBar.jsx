@@ -1,6 +1,6 @@
 import "./FilterBar.css";
 
-function FilterBar({ activateFilterStatus, active }) {
+function FilterBar({ activateFilterStatus, active, onNewApplication}) {
 	const filters = ["All", "Applied", "Interview", "Offers", "Rejected"];
 
 	return (
@@ -13,7 +13,7 @@ function FilterBar({ activateFilterStatus, active }) {
 			> {filter} </button>
             ))}
 
-			<button className="new-application-btn"> + New Application </button>
+			<button className="new-application-btn" onClick={onNewApplication}> + New Application </button>
 		</div>
 	);
 }
