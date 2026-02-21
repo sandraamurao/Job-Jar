@@ -1,5 +1,6 @@
 import FilterBar from "../FilterBar/FilterBar.jsx";
 import ApplicationForm from "../ApplicationForm/ApplicationForm.jsx";
+import ApplicationCard from "../ApplicationCard/ApplicationCard.jsx";
 import { useState } from "react";
 import "./App.css";
 import { jobApplicationDetails, jobStatus } from "../utils/constants.jsx";
@@ -31,6 +32,17 @@ function App() {
 		console.log("New application added:", newJob);
 	}
 
+	function filterApplications() {
+		if (active == "All") {
+			return applications;
+		} 
+
+		return applications.filter((job) => job.status === active);
+	}
+
+	const filteredApplications = filterApplications();
+
+	console.log("applications:", applications);
 	return (
 		<div className="app-container">
 			<h1 className="title">Job Application Tracker</h1>
@@ -49,6 +61,11 @@ function App() {
 					onClose={() => setShowForm(false)} // Closes form
 				/>
 			)}
+
+			{!showForm && 
+				<ApplicationCard applications={filteredApplications} />}
+			
+			
 		</div>
 	);
 }
