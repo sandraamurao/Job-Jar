@@ -8,7 +8,7 @@ In React, forms work differently than in regular HTML.
 
 */
 
-function ApplicationForm({onSave}) {
+function ApplicationForm({ onSave, onClose }) {
 	const [formData, setFormData] = useState({
 		company: "",
 		jobTitle: "",
@@ -76,9 +76,13 @@ function ApplicationForm({onSave}) {
 					placeholder="Job Status"
 					required
 				>
-                    <option value="" disabled>Select Status</option>  
+					<option value="" disabled>
+						Select Status
+					</option>
 					{jobStatus.map((status) => (
-						<option key={status} value={status}>{status}</option>
+						<option key={status} value={status}>
+							{status}
+						</option>
 					))}
 				</select>
 
@@ -109,6 +113,9 @@ function ApplicationForm({onSave}) {
 				/>
 
 				<button type="submit">Save Application</button>
+				<button type="button" onClick={onClose}>
+					Cancel
+				</button>
 			</form>
 		</div>
 	);
