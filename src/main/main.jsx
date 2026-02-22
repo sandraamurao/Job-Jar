@@ -1,5 +1,6 @@
 import { createRoot } from "react-dom/client";
 import App from "../App/App.jsx";
+import '../index.css';
 
 function Main() {
   return <App />;
