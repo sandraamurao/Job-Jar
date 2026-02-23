@@ -63,7 +63,19 @@ function App() {
 				/>
 			)}
 			
-			{!showForm && <ApplicationCard applications={filteredApplications} />}
+			{!showForm && (
+				<>
+					{applications.length == 0 && (
+						<div>
+							{active == "All"
+								? `No applications to show yet. Click "+ New Application" to get
+								started!`
+								: "No applications with status " + `"${active}"`}
+						</div>
+					)}
+					<ApplicationCard applications={filteredApplications} />
+				</>
+			)}
 		</div>
 	);
 }
