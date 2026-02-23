@@ -2,13 +2,14 @@ import FilterBar from "../FilterBar/FilterBar.jsx";
 import ApplicationForm from "../ApplicationForm/ApplicationForm.jsx";
 import ApplicationCard from "../ApplicationCard/ApplicationCard.jsx";
 import { useState } from "react";
+import useLocalStorage from "../hooks/useLocalStorage.jsx";
 import "./App.css";
 import { jobApplicationDetails, jobStatus } from "../utils/constants.jsx";
 
 function App() {
 	const [active, setActive] = useState("All");
 	const [showForm, setShowForm] = useState(false);
-	const [applications, setApplications] = useState([]);
+	const [applications, setApplications] = useLocalStorage('job-applications', []);
 
 	function openForm() {
 		setShowForm(true); // opens the form
@@ -58,14 +59,11 @@ function App() {
 			{showForm && ( // checks if showForm == true
 				<ApplicationForm
 					onSave={addApplication}
-					onClose={() => setShowForm(false)} // Closes form
+								onClose={() => setShowForm(false)}
 				/>
 			)}
-
-			{!showForm && 
-				<ApplicationCard applications={filteredApplications} />}
 			
-			
+			{!showForm && <ApplicationCard applications={filteredApplications} />}
 		</div>
 	);
 }
