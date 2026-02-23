@@ -1,0 +1,32 @@
+.modal-form {
+    @apply p-7;
+}
+
+.form {
+    @apply space-y-4;
+}
+
+h1 {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+label {
+    @apply block text-sm font-medium mb-1;
+}
+
+.input-field {
+    @apply w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500;
+}
+
+.btns-container {
+    @apply flex gap-3 pt-4;
+}
+
+.save-btn {
+    @apply flex-1 bg-[#d3acfa] text-white py-3 rounded-lg font-semibold hover:bg-[#9691d8];
+}
+
+.cancel-btn {
+    @apply bg-[#d7dadc] px-6 py-3 border rounded-lg font-semibold hover:bg-[#d46565];
+}

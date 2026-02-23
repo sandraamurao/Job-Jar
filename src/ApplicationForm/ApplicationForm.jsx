@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { jobStatus } from "../utils/constants";
+import './ApplicationForm.css';
+
 /* 
 In React, forms work differently than in regular HTML.
     - Regular HTML: Form manages its own data
@@ -46,9 +48,11 @@ function ApplicationForm({ onSave, onClose }) {
 	}
 
 	return (
-		<div>
-			<form onSubmit={handleSubmit}>
+		<div className="modal-form">
+			<h1> New Job Application </h1>
+			<form onSubmit={handleSubmit} className="form">
 				{/* Company */}
+				<label> <br />Company Name </label>
 				<input
 					type="text"
 					name="company" // important! matches state key
@@ -56,66 +60,103 @@ function ApplicationForm({ onSave, onClose }) {
 					onChange={handleChange}
 					placeholder="Company"
 					required
+					className="input-field"
 				/>
+				<br></br>
 
 				{/* Job Title */}
-				<input
-					type="text"
-					name="jobTitle"
-					value={formData.jobTitle}
-					onChange={handleChange}
-					placeholder="Job Title"
-					required
-				/>
+				<div>
+					<label >Job Title</label>
+					<input
+						type="text"
+						name="jobTitle"
+						value={formData.jobTitle}
+						onChange={handleChange}
+						placeholder="e.g., Frontend Developer"
+						required
+						className="input-field"
+					/>
+				</div>
 
 				{/* Status */}
-				<select
-					name="status"
-					value={formData.status}
-					onChange={handleChange}
-					placeholder="Job Status"
-					required
-				>
-					<option value="" disabled>
-						Select Status
-					</option>
-					{jobStatus.map((status) => (
-						<option key={status} value={status}>
-							{status}
+				<div>
+					<label >Status</label>
+					<select
+						name="status"
+						value={formData.status}
+						onChange={handleChange}
+						required
+						className="input-field"
+					>
+						<option value="" disabled>
+							Select Status
 						</option>
-					))}
-				</select>
+						{jobStatus.map((status) => (
+							<option key={status} value={status}>
+								{status}
+							</option>
+						))}
+					</select>
+				</div>
 
-				{/* Job Title */}
-				<input
-					type="date"
-					name="dateApplied"
-					value={formData.dateApplied}
-					onChange={handleChange}
-					required
-				/>
+				{/* Date Applied */}
+				<div>
+					<label >Date Applied</label>
+					<input
+						type="date"
+						name="dateApplied"
+						value={formData.dateApplied}
+						onChange={handleChange}
+						required
+						className="input-field"
+					/>
+				</div>
 
 				{/* Job URL */}
-				<input
-					type="url"
-					name="jobUrl"
-					value={formData.jobUrl}
-					onChange={handleChange}
-					placeholder="Job URL (optional)"
-				/>
+				<div>
+					<label >
+						Job URL (optional)
+					</label>
+					<input
+						type="url"
+						name="jobUrl"
+						value={formData.jobUrl}
+						onChange={handleChange}
+						placeholder="https://..."
+						className="input-field"
+					/>
+				</div>
 
 				{/* Notes */}
-				<textarea
-					name="notes"
-					value={formData.notes}
-					onChange={handleChange}
-					placeholder="Notes (optional)"
-				/>
+				<div>
+					<label >
+						Notes (optional)
+					</label>
+					<textarea
+						name="notes"
+						value={formData.notes}
+						onChange={handleChange}
+						placeholder="Any notes..."
+						rows="3"
+						className="input-field resize-none"
+					/>
+				</div>
 
-				<button type="submit">Save Application</button>
-				<button type="button" onClick={onClose}>
-					Cancel
-				</button>
+				<div className="btns-container">
+					<button 
+						type="submit"
+						className="save-btn"
+					>
+						Save Application
+					</button>
+					<button 
+						type="button"
+						onClick={onClose}
+						className="cancel-btn"
+					>
+						Cancel
+					</button>
+				</div>
 			</form>
 		</div>
 	);

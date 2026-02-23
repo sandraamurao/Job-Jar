@@ -4,12 +4,14 @@ import ApplicationCard from "../ApplicationCard/ApplicationCard.jsx";
 import { useState } from "react";
 import useLocalStorage from "../hooks/useLocalStorage.jsx";
 import "./App.css";
-import { jobApplicationDetails, jobStatus } from "../utils/constants.jsx";
 
 function App() {
 	const [active, setActive] = useState("All");
 	const [showForm, setShowForm] = useState(false);
-	const [applications, setApplications] = useLocalStorage('job-applications', []);
+	const [applications, setApplications] = useLocalStorage(
+		"job-applications",
+		[],
+	);
 
 	function openForm() {
 		setShowForm(true); // opens the form
@@ -28,7 +30,7 @@ function App() {
 		};
 
 		setApplications([...applications, newJob]); // Add to list
-		setShowForm(false);  
+		setShowForm(false);
 
 		console.log("New application added:", newJob);
 	}
@@ -36,14 +38,13 @@ function App() {
 	function filterApplications() {
 		if (active == "All") {
 			return applications;
-		} 
+		}
 
 		return applications.filter((job) => job.status === active);
 	}
 
 	const filteredApplications = filterApplications();
 
-	console.log("applications:", applications);
 	return (
 		<div className="app-container">
 			<h1 className="title">Job Application Tracker</h1>
@@ -57,12 +58,27 @@ function App() {
 			/>
 
 			{showForm && ( // checks if showForm == true
-				<ApplicationForm
-					onSave={addApplication}
+				<>
+					{/* Dark background */}
+					<div
+						className="modal-bg"
+						onClick={() => setShowForm(false)}
+					/>
+					{/* White form box (centered) */}
+					<div
+						className="modal-container"
+						style={{ border: "1px black solid" }}
+					>
+						<div className="modal-contents">
+							<ApplicationForm
+								onSave={addApplication}
 								onClose={() => setShowForm(false)}
-				/>
+							/>
+						</div>
+					</div>
+				</>
 			)}
-			
+
 			{!showForm && (
 				<>
 					{applications.length == 0 && (

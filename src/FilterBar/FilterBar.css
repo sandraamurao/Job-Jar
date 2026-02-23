@@ -1,35 +1,37 @@
 button {
-    border: rgb(229, 229, 229);
-    border-radius: 10px;
-    padding: 10px 20px;
-    margin-right: 20px;
-    font-size: 20px;
-    
+	border: rgb(229, 229, 229);
+	border-radius: 10px;
+	padding: 10px 20px !important;
+	font-size: 20px;
 }
 
-.filter-buttons {
-
+.btn-container {
+	@apply flex flex-wrap justify-between items-center gap-2 mb-6 pb-4 border-b;
 }
 
 .new-application-btn {
-  background-color: #bb8fe6;
+	background-color: #bb8fe6;
+	@apply px-6 py-2 text-white rounded-lg font-semibold transition-all shadow-md whitespace-nowrap ml-auto;
 }
 
-
 .new-application-btn:hover {
-  background-color: #d3acfa;
+	background-color: #d3acfa;
+}
+
+.filter-btn {
+	@apply px-4 py-2 rounded-lg font-medium text-sm transition-all;
 }
 
 .btn {
-  background-color: rgb(227, 227, 227);
+	background-color: rgb(227, 227, 227);
 }
 
 .btn:hover {
-  background-color: rgb(200, 214, 243);
+	background-color: rgb(200, 214, 243);
 }
 
 .btn-active {
-  background-color: #4A90E2;
-  font-weight: bold;
-  color: white;
+	background-color: #4a90e2;
+	font-weight: bold;
+	color: white;
 }
