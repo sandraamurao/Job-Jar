@@ -1,7 +1,7 @@
 import "./FilterBar.css";
 
 function FilterBar({ activateFilterStatus, active, onNewApplication }) {
-	const filters = ["All", "Applied", "Interview", "Offers", "Rejected"];
+	const filters = ["All", "Applied", "Interview", "Offer", "Rejected"];
 
 	return (
 		<div className="btn-container">
