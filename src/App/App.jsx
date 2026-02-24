@@ -8,31 +8,57 @@ import "./App.css";
 function App() {
 	const [active, setActive] = useState("All");
 	const [showForm, setShowForm] = useState(false);
+	const [editingJob, setEditingJob] = useState(null);
 	const [applications, setApplications] = useLocalStorage(
 		"job-applications",
 		[],
 	);
 
-	function openForm() {
-		setShowForm(true); // opens the form
-	}
-
 	function activateFilterStatus(activeFilter) {
 		setActive(activeFilter);
 	}
 
-	function addApplication(formData) {
-		const newJob = {
-			id: crypto.randomUUID(), // Generate unique ID
-			...formData, // Spread all form fields
-			createdAt: new Date().toISOString(),
-			updatedAt: new Date().toISOString(),
-		};
+	function openForm() {
+		setShowForm(true); // opens the form
+	}
 
-		setApplications([...applications, newJob]); // Add to list
-		setShowForm(false);
+	function openEditForm(job) {
+		setEditingJob(job); // store which job is being edited
+		setShowForm(true); // open the form
+	}
+
+	function addApplication(formData) {
+		if (editingJob) {
+			// Edit mode - update existing job
+			const updated = applications.map((job) =>
+				job.id === editingJob.id
+					? { ...job, ...formData, updatedAt: new Date().toISOString() }
+					: job,
+			);
+			setApplications(updated);
+			setEditingJob(null); // Clear editing state
+		} else {
+			// Add mode - create new application
+			const newJob = {
+				id: crypto.randomUUID(), // Generate unique ID
+				...formData, // Spread all form fields
+				createdAt: new Date().toISOString(),
+				updatedAt: new Date().toISOString(),
+			};
+			setApplications([...applications, newJob]); // Add to list
+		}
+
+		setShowForm(false); // close form
 
 		console.log("New application added:", newJob);
+	}
+
+	function deleteApplication(id) {
+		// delete job by filtering job.id (from applications) !== id
+		const updatedJobs = applications.filter((job) => job.id !== id);
+
+		// update localStorage:
+		setApplications(updatedJobs);
 	}
 
 	function filterApplications() {
@@ -60,10 +86,7 @@ function App() {
 			{showForm && ( // checks if showForm == true
 				<>
 					{/* Dark background */}
-					<div
-						className="modal-bg"
-						onClick={() => setShowForm(false)}
-					/>
+					<div className="modal-bg" onClick={() => setShowForm(false)} />
 					{/* White form box (centered) */}
 					<div
 						className="modal-container"
@@ -72,7 +95,11 @@ function App() {
 						<div className="modal-contents">
 							<ApplicationForm
 								onSave={addApplication}
-								onClose={() => setShowForm(false)}
+								onClose={() => {
+									setShowForm(false);
+									setEditingJob(null); // add this so that when creating new application, the form is not prefilled
+								}}
+								initialData={editingJob}
 							/>
 						</div>
 					</div>
@@ -89,7 +116,11 @@ function App() {
 								: "No applications with status " + `"${active}"`}
 						</div>
 					)}
-					<ApplicationCard applications={filteredApplications} />
+					<ApplicationCard
+						applications={filteredApplications}
+						onDelete={deleteApplication}
+						onEdit={openEditForm}
+					/>
 				</>
 			)}
 		</div>

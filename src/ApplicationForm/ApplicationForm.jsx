@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { jobStatus } from "../utils/constants";
-import './ApplicationForm.css';
+import "./ApplicationForm.css";
 
 /* 
 In React, forms work differently than in regular HTML.
@@ -10,15 +10,18 @@ In React, forms work differently than in regular HTML.
 
 */
 
-function ApplicationForm({ onSave, onClose }) {
-	const [formData, setFormData] = useState({
-		company: "",
-		jobTitle: "",
-		status: "",
-		dateApplied: "",
-		jobUrl: "",
-		notes: "",
-	});
+function ApplicationForm({ onSave, onClose, initialData }) {
+	const [formData, setFormData] = useState(
+		initialData || {
+			// If initialData does not exist, formData will be this: 
+			company: "",
+			jobTitle: "",
+			status: "",
+			dateApplied: "",
+			jobUrl: "",
+			notes: "",
+		},
+	);
 
 	// Handle any input CHANGE
 	function handleChange(event) {
@@ -52,7 +55,11 @@ function ApplicationForm({ onSave, onClose }) {
 			<h1> New Job Application </h1>
 			<form onSubmit={handleSubmit} className="form">
 				{/* Company */}
-				<label> <br />Company Name </label>
+				<label>
+					{" "}
+					<br />
+					Company Name{" "}
+				</label>
 				<input
 					type="text"
 					name="company" // important! matches state key
@@ -66,7 +73,7 @@ function ApplicationForm({ onSave, onClose }) {
 
 				{/* Job Title */}
 				<div>
-					<label >Job Title</label>
+					<label>Job Title</label>
 					<input
 						type="text"
 						name="jobTitle"
@@ -80,7 +87,7 @@ function ApplicationForm({ onSave, onClose }) {
 
 				{/* Status */}
 				<div>
-					<label >Status</label>
+					<label>Status</label>
 					<select
 						name="status"
 						value={formData.status}
@@ -101,7 +108,7 @@ function ApplicationForm({ onSave, onClose }) {
 
 				{/* Date Applied */}
 				<div>
-					<label >Date Applied</label>
+					<label>Date Applied</label>
 					<input
 						type="date"
 						name="dateApplied"
@@ -114,9 +121,7 @@ function ApplicationForm({ onSave, onClose }) {
 
 				{/* Job URL */}
 				<div>
-					<label >
-						Job URL (optional)
-					</label>
+					<label>Job URL (optional)</label>
 					<input
 						type="url"
 						name="jobUrl"
@@ -129,9 +134,7 @@ function ApplicationForm({ onSave, onClose }) {
 
 				{/* Notes */}
 				<div>
-					<label >
-						Notes (optional)
-					</label>
+					<label>Notes (optional)</label>
 					<textarea
 						name="notes"
 						value={formData.notes}
@@ -143,17 +146,10 @@ function ApplicationForm({ onSave, onClose }) {
 				</div>
 
 				<div className="btns-container">
-					<button 
-						type="submit"
-						className="save-btn"
-					>
+					<button type="submit" className="save-btn">
 						Save Application
 					</button>
-					<button 
-						type="button"
-						onClick={onClose}
-						className="cancel-btn"
-					>
+					<button type="button" onClick={onClose} className="cancel-btn">
 						Cancel
 					</button>
 				</div>

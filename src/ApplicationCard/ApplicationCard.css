@@ -2,6 +2,10 @@
 	@apply w-full flex flex-wrap justify-items-start gap-x-12 gap-y-6;
 }
 
-.card {
+.card-contents {
 	@apply flex flex-wrap border p-4 gap-8 ;
+}
+
+.card-btns {
+	border: 1px solid black;
 }
