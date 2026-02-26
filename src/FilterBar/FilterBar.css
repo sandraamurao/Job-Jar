@@ -10,12 +10,12 @@ button {
 }
 
 .new-application-btn {
-	background-color: #bb8fe6;
+	background-color: #2a6bb5;
 	@apply px-6 py-2 text-white rounded-lg font-semibold transition-all shadow-md whitespace-nowrap ml-auto;
 }
 
 .new-application-btn:hover {
-	background-color: #d3acfa;
+	background-color: #8691ed;
 }
 
 .filter-btn {
