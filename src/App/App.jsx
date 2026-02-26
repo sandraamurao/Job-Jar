@@ -57,7 +57,7 @@ function App() {
 		// delete job by filtering job.id (from applications) !== id
 		const updatedJobs = applications.filter((job) => job.id !== id);
 
-		// update localStorage:
+		// update applications in localStorage:
 		setApplications(updatedJobs);
 	}
 

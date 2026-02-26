@@ -6,7 +6,7 @@ button {
 }
 
 .btn-container {
-	@apply flex flex-wrap justify-between items-center gap-2 mb-6 pb-4 border-b;
+	@apply flex flex-wrap justify-between items-center gap-6 mb-6 pb-4 border-b border-[#a8aeb1];
 }
 
 .new-application-btn {
@@ -19,7 +19,7 @@ button {
 }
 
 .filter-btn {
-	@apply px-4 py-2 rounded-lg font-medium text-sm transition-all;
+	@apply mt-6 mb-4 px-4 py-2 rounded-lg font-medium text-[18px] transition-all;
 }
 
 .btn {
