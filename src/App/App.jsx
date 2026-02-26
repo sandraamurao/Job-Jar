@@ -61,10 +61,8 @@ function App() {
 				if (confirmed) {
 					setApplications([...applications, newJob]); // Add to list
 				}
-			} 
-			else // if no match, just add:
-				setApplications([...applications, newJob]); // Add to list
-			
+			} // if no match, just add:
+			else setApplications([...applications, newJob]); // Add to list
 		}
 
 		setShowForm(false); // close form
@@ -73,11 +71,15 @@ function App() {
 	}
 
 	function deleteApplication(id) {
-		// delete job by filtering job.id (from applications) !== id
-		const updatedJobs = applications.filter((job) => job.id !== id);
+		// Confirm if user wants to delete saved application first
+		const confirmed = confirm("Are you sure you want to delete?");
+		if (confirmed) {
+			// delete job by filtering job.id (from applications) !== id
+			const updatedJobs = applications.filter((job) => job.id !== id);
 
-		// update applications in localStorage:
-		setApplications(updatedJobs);
+			// update applications in localStorage:
+			setApplications(updatedJobs);
+		}
 	}
 
 	function filterApplications() {
