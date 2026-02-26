@@ -3,9 +3,17 @@
 }
 
 .card-contents {
-	@apply flex flex-wrap border p-4 gap-8 ;
+	@apply flex flex-wrap border p-4 gap-8 hover:shadow-xl transition-shadow duration-200;
 }
 
-.card-btns {
-	border: 1px solid black;
+.company-name {
+	font-size: 25px !important;
+}
+
+button {
+	padding: 10px !important;
+}
+
+button:hover {
+	background-color: #f5f0f0;
 }
