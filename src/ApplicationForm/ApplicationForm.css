@@ -24,7 +24,7 @@ label {
 }
 
 .save-btn {
-    @apply flex-1 bg-[#d3acfa] text-white py-3 rounded-lg font-semibold hover:bg-[#9691d8];
+    @apply flex-1 bg-[#2a6bb5] text-white py-3 rounded-lg font-semibold hover:bg-[#798ade];
 }
 
 .cancel-btn {
