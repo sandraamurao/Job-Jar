@@ -36,8 +36,11 @@ function App() {
 					? { ...job, ...formData, updatedAt: new Date().toISOString() }
 					: job,
 			);
-			setApplications(updated);
-			setEditingJob(null); // Clear editing state
+			const confirmed = confirm("Are you sure with your changes to this application?");
+			if (confirmed) {
+				setApplications(updated);
+				setEditingJob(null); // Clear editing state
+			}
 		} else {
 			// Add mode - create new application
 			const newJob = {
@@ -72,7 +75,7 @@ function App() {
 
 	function deleteApplication(id) {
 		// Confirm if user wants to delete saved application first
-		const confirmed = confirm("Are you sure you want to delete?");
+		const confirmed = confirm("Are you sure you want to delete this application?");
 		if (confirmed) {
 			// delete job by filtering job.id (from applications) !== id
 			const updatedJobs = applications.filter((job) => job.id !== id);
