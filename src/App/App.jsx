@@ -73,9 +73,9 @@ function App() {
 
 	return (
 		<div className="app-container">
-			<h1 className="title">Job Application Tracker</h1>
+			<h1 className="title">💼 Job Jar</h1>
 
-			<p>Keep track of your job search progress</p>
+			<p>Keep track of your job hunting progress 💪</p>
 
 			<FilterBar
 				activateFilterStatus={activateFilterStatus}
