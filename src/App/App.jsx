@@ -28,6 +28,7 @@ function App() {
 	}
 
 	function addApplication(formData) {
+		console.log("formData: ", formData);
 		if (editingJob) {
 			// Edit mode - update existing job
 			const updated = applications.map((job) =>
@@ -45,7 +46,25 @@ function App() {
 				createdAt: new Date().toISOString(),
 				updatedAt: new Date().toISOString(),
 			};
-			setApplications([...applications, newJob]); // Add to list
+			console.log("newJob: ", newJob);
+
+			// Validate if same company and job title exist in saved applications
+			const isMatch = applications.some(
+				(job) =>
+					job.company === formData.company &&
+					job.jobTitle === formData.jobTitle,
+			);
+			if (isMatch) {
+				const confirmed = confirm(
+					"A duplicate is found with the same company name and job position. Add anyways?",
+				);
+				if (confirmed) {
+					setApplications([...applications, newJob]); // Add to list
+				}
+			} 
+			else // if no match, just add:
+				setApplications([...applications, newJob]); // Add to list
+			
 		}
 
 		setShowForm(false); // close form
