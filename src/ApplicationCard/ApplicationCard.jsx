@@ -84,12 +84,12 @@ function ApplicationCard({ applications, onDelete, onEdit }) {
 
 							<div className="card-btn">
 								<button onClick={() => onEdit(a)}>
-									<span className="material-icons-outlined">edit</span>
+									<span className={`material-icons-outlined ${setStatusColor(a.status)}`}>edit</span>
 								</button>
 
 								<button>
 									<span
-										className="material-icons-outlined"
+										className={`material-icons-outlined ${setStatusColor(a.status)}`}
 										onClick={() => onDelete(a.id)}
 									>
 										delete
