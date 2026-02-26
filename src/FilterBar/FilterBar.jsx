@@ -16,7 +16,7 @@ function FilterBar({ activateFilterStatus, active, onNewApplication }) {
 			))}
 			
 			<button className="new-application-btn flex flex-row items-center gap-1" onClick={onNewApplication}>
-				<span className="material-icons-outlined">add</span>
+				<span className="material-icons-outlined text-[14px]">add</span>
 				New Application
 			</button>
 		</div>

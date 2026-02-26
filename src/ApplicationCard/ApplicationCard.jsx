@@ -37,7 +37,7 @@ function ApplicationCard({ applications, onDelete, onEdit }) {
 						>
 							<div className="flex flex-col gap-1">
 								<h1 className="company-name"> {a.company} </h1>
-								<span className="capitalize text-[17px]"> {a.jobTitle} </span>
+								<span className="capitalize text-[15px]"> {a.jobTitle} </span>
 
 								<div className="flex flex-row items-center gap-1">
 									{/* div for status and icon */}

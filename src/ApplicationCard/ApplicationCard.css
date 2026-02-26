@@ -1,5 +1,5 @@
 .cards-container {
-	@apply w-full flex flex-wrap justify-items-start gap-x-12 gap-y-6;
+	@apply w-full flex flex-wrap justify-items-start gap-x-12 gap-y-6 text-[14px];
 }
 
 .card-contents {
@@ -7,7 +7,7 @@
 }
 
 .company-name {
-	font-size: 25px !important;
+	font-size: 20px !important;
 }
 
 button {

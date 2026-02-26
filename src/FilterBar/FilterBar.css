@@ -11,7 +11,7 @@ button {
 
 .new-application-btn {
 	background-color: #2a6bb5;
-	@apply px-6 py-2 text-white rounded-lg font-semibold transition-all shadow-md whitespace-nowrap ml-auto;
+	@apply px-6 py-2 text-white text-[14px] rounded-lg font-semibold transition-all shadow-md whitespace-nowrap ml-auto;
 }
 
 .new-application-btn:hover {
@@ -19,7 +19,7 @@ button {
 }
 
 .filter-btn {
-	@apply mt-6 mb-4 px-4 py-2 rounded-lg font-medium text-[18px] transition-all;
+	@apply mt-6 mb-4 px-4 py-2 rounded-lg font-medium text-[14px] transition-all;
 }
 
 .btn {
