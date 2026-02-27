@@ -99,7 +99,7 @@ function App() {
 		<div className="app-container">
 			<h1 className="title">💼 Job Jar</h1>
 
-			<p>Keep track of your job hunting progress 💪</p>
+			<p className="mb-6">Keep track of your job hunting progress 💪</p>
 
 			<FilterBar
 				activateFilterStatus={activateFilterStatus}
