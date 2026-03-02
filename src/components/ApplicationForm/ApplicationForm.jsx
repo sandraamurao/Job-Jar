@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { jobStatus } from "../utils/constants";
+import { jobStatus } from "../../utilities/constants";
 import "./ApplicationForm.css";
 
 /* 

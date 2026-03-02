@@ -1,6 +1,6 @@
-import FilterBar from "../FilterBar/FilterBar.jsx";
-import ApplicationForm from "../ApplicationForm/ApplicationForm.jsx";
-import ApplicationCard from "../ApplicationCard/ApplicationCard.jsx";
+import FilterBar from "../components/FilterBar/FilterBar.jsx";
+import ApplicationForm from "../components/ApplicationForm/ApplicationForm.jsx";
+import ApplicationCard from "../components/ApplicationCard/ApplicationCard.jsx";
 import { useState } from "react";
 import useLocalStorage from "../hooks/useLocalStorage.jsx";
 import "./App.css";
