@@ -1,6 +1,6 @@
 # Job Application Tracker
 
-A responsive web application built with React to help job seekers organize and track their application progress. Developed as a personal tool to solve the challenge of managing 50+ job applications across multiple platforms.
+A responsive web application built with React to organize and track job application progress. Developed as my first React project to learn modern frontend development while solving a real problem I was facing during my job search.
 
 **[Live Demo](https://sandraamurao.github.io/Job-Jar/)** | **[GitHub Repo](https://github.com/sandraamurao/job-jar)**
 
