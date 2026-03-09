@@ -2,7 +2,7 @@
 
 A responsive web application built with React to help job seekers organize and track their application progress. Developed as a personal tool to solve the challenge of managing 50+ job applications across multiple platforms.
 
-**[Live Demo](https://sandraamurao.github.io/job-jar/)** | **[GitHub Repo](https://github.com/sandraamurao/job-jar)**
+**[Live Demo](https://sandraamurao.github.io/Job-Jar/)** | **[GitHub Repo](https://github.com/sandraamurao/job-jar)**
 
 ---
 
