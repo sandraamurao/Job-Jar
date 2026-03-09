@@ -4,15 +4,3 @@ export const jobStatus = [
     "Offer",
     "Rejected"
 ]
-
-export const jobApplicationDetails = {
-    id: "",
-    company: "",
-    jobTitle: "",
-    status: "",
-    dateApplied: "",
-    interviewDate: "",
-    followUpDate: "",
-    jobUrl: "",
-    notes: "",
-}
