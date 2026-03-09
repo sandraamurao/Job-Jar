@@ -9,7 +9,7 @@ A responsive web application built with React to organize and track job applicat
 ## Features
 
 - **Full CRUD Operations** - Create, read, update, and delete job applications
-- **Status Filtering** - Filter applications by stage: Applied, Phone Screen, Interview, Offer, Rejected
+- **Status Filtering** - Filter applications by stage: Applied, Interview, Offer, Rejected
 - **Persistent Storage** - Data saved locally using browser localStorage API
 - **Responsive Design** - Mobile-first design works seamlessly on all devices
 - **Modal Forms** - Clean interface for adding and editing applications
@@ -22,7 +22,7 @@ A responsive web application built with React to organize and track job applicat
 2. Fill in company details and status
 3. Use filter buttons to view specific stages
 4. Click **Edit** or **Delete** on any card to manage applications
-5. Refresh the page - your data persists!
+5. Refresh the page and you will still see your job applications!
 
 --- 
 
@@ -32,6 +32,5 @@ A responsive web application built with React to organize and track job applicat
 - **Tailwind CSS** - Utility-first CSS framework for styling
 - **Vite** - Fast build tool and development server
 - **localStorage API** - Client-side data persistence
-- **Flatpickr** - Date picker component (optional - if you use it)
 
 ---
