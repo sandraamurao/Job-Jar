@@ -15,9 +15,23 @@ p {
 }
 
 .modal-container {
-  @apply fixed inset-0 z-[1000] flex items-center justify-center p-4;
+  @apply 
+  fixed 
+  inset-0 
+  z-[1000] 
+  flex 
+  items-center 
+  justify-center 
+  p-4;
 }
 
 .modal-contents {
-  @apply bg-white rounded-xl shadow-2xl w-full max-w-md max-h-[90vh] overflow-y-auto;
+  @apply
+  bg-white 
+  rounded-xl 
+  shadow-2xl 
+  w-full 
+  max-w-md 
+  max-h-[90vh] 
+  overflow-y-auto;
 }

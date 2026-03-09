@@ -28,7 +28,6 @@ function App() {
 	}
 
 	function addApplication(formData) {
-		console.log("formData: ", formData);
 		if (editingJob) {
 			// Edit mode - update existing job
 			const updated = applications.map((job) =>
@@ -65,12 +64,10 @@ function App() {
 					setApplications([...applications, newJob]); // Add to list
 				}
 			} // if no match, just add:
-			else setApplications([...applications, newJob]); // Add to list
+			else setApplications([...applications, newJob]);
 		}
 
 		setShowForm(false); // close form
-
-		console.log("New application added:", newJob);
 	}
 
 	function deleteApplication(id) {
@@ -121,7 +118,7 @@ function App() {
 								onSave={addApplication}
 								onClose={() => {
 									setShowForm(false);
-									setEditingJob(null); // add this so that when creating new application, the form is not prefilled
+									setEditingJob(null); // add this so that when creating new application, the form is not pre-filled
 								}}
 								initialData={editingJob}
 							/>
@@ -135,8 +132,7 @@ function App() {
 					{applications.length == 0 && (
 						<div>
 							{active == "All"
-								? `No applications to show yet. Click "+ New Application" to get
-								started!`
+								? `No applications to show yet. Click "+ New Application" to track your applications!`
 								: "No applications with status " + `"${active}"`}
 						</div>
 					)}

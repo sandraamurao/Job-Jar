@@ -2,14 +2,6 @@ import { useState } from "react";
 import { jobStatus } from "../../utilities/constants";
 import "./ApplicationForm.css";
 
-/* 
-In React, forms work differently than in regular HTML.
-    - Regular HTML: Form manages its own data
-    - React: You control the data with state
-    This is called a "controlled component" — React controls the form.
-
-*/
-
 function ApplicationForm({ onSave, onClose, initialData }) {
 	const [formData, setFormData] = useState(
 		initialData || {
@@ -55,21 +47,18 @@ function ApplicationForm({ onSave, onClose, initialData }) {
 			<h1> New Job Application </h1>
 			<form onSubmit={handleSubmit} className="form">
 				{/* Company */}
-				<label>
-					{" "}
-					<br />
-					Company Name{" "}
-				</label>
-				<input
-					type="text"
-					name="company" // important! matches state key
-					value={formData.company}
-					onChange={handleChange}
-					placeholder="Company"
-					required
-					className="input-field"
-				/>
-				<br></br>
+				<div className="mt-4">
+					<label>Company Name</label>
+					<input
+						type="text"
+						name="company" // important! matches state key
+						value={formData.company}
+						onChange={handleChange}
+						placeholder="Company"
+						required
+						className="input-field"
+					/>
+				</div>
 
 				{/* Job Title */}
 				<div>

@@ -1,7 +1,6 @@
 import "./ApplicationCard.css";
 
 function ApplicationCard({ applications, onDelete, onEdit }) {
-	console.log("applications in card: ", applications);
 
 	function setStatusColor(status) {
 		if (status == "Applied") return "text-[#098bdb]";
