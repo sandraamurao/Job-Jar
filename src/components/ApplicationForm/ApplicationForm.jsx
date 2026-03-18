@@ -10,6 +10,7 @@ function ApplicationForm({ onSave, onClose, initialData }) {
 			jobTitle: "",
 			status: "",
 			dateApplied: "",
+			interviewDate: "",
 			jobUrl: "",
 			notes: "",
 		},
@@ -37,6 +38,7 @@ function ApplicationForm({ onSave, onClose, initialData }) {
 			jobTitle: "",
 			status: "",
 			dateApplied: "",
+			interviewDate: "",
 			jobUrl: "",
 			notes: "",
 		});
@@ -107,6 +109,19 @@ function ApplicationForm({ onSave, onClose, initialData }) {
 						className="input-field"
 					/>
 				</div>
+
+				{/* Interview date */}
+				{formData.status == "Interview" && <div>
+					<label>Interview Date</label>
+					<input
+						type="date"
+						name="interviewDate"
+						value={formData.interviewDate}
+						onChange={handleChange}
+						className="input-field"
+					/>
+				</div>}
+				
 
 				{/* Job URL */}
 				<div>

@@ -54,6 +54,11 @@ function ApplicationCard({ applications, onDelete, onEdit }) {
 									{/* span for applied date */}
 									Applied: <span className="font-bold"> {a.dateApplied} </span>
 								</span>
+								
+								{a.interviewDate && <div className="mt-2 mb-2">
+									{/* span for applied date */}
+									Interview on: <div className="font-bold"> {a.interviewDate} </div>
+								</div>}
 
 								{a.jobUrl && (
 									<div className="flex items-center gap-1">
