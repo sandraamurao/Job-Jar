@@ -50,7 +50,7 @@ function ApplicationForm({ onSave, onClose, initialData }) {
 			<form onSubmit={handleSubmit} className="form">
 				{/* Company */}
 				<div className="mt-4">
-					<label>Company Name</label>
+					<label>Company Name <span className="text-[red]">*</span> </label>
 					<input
 						type="text"
 						name="company" // important! matches state key
@@ -64,7 +64,7 @@ function ApplicationForm({ onSave, onClose, initialData }) {
 
 				{/* Job Title */}
 				<div>
-					<label>Job Title</label>
+					<label>Job Title <span className="text-[red]">*</span> </label>
 					<input
 						type="text"
 						name="jobTitle"
@@ -78,7 +78,7 @@ function ApplicationForm({ onSave, onClose, initialData }) {
 
 				{/* Status */}
 				<div>
-					<label>Status</label>
+					<label>Status <span className="text-[red]">*</span> </label>
 					<select
 						name="status"
 						value={formData.status}
@@ -99,7 +99,7 @@ function ApplicationForm({ onSave, onClose, initialData }) {
 
 				{/* Date Applied */}
 				<div>
-					<label>Date Applied</label>
+					<label>Date Applied <span className="text-[red]">*</span> </label>
 					<input
 						type="date"
 						name="dateApplied"
